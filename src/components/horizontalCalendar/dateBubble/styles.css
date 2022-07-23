@@ -1,4 +1,8 @@
-.Container {
-  font-family: sans-serif;
+.date-value {
+  width: 10%;
+  margin-top: 20px;
+  margin: auto;
+  margin-top: 30px;
+  position: absolute;
   text-align: center;
 }

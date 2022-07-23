@@ -2,7 +2,7 @@ import moment from "moment";
 
 export const formatDate = (date: string, locale: string = "en") => {
   moment.locale(locale);
-  return moment(date).format("MMMM D, YYYY");
+  return moment(date).format("dddd, MMMM Do YYYY");
 };
 
 export const getWeekDays = () => {

@@ -1,3 +1,11 @@
+:root {
+  --blue: #0970ce;
+  --dark-blue: #01407a;
+  --light-blue: #8bc7ff;
+
+  --light-grey: #e6e6e6;
+}
+
 .app {
   font-family: sans-serif;
   text-align: center;
