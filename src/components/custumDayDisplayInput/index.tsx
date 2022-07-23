@@ -8,7 +8,7 @@ export default function CustumDayDisplayInput({
   return (
     <>
       <label htmlFor="select" className="prompt">
-        Choose how to display dates:{" "}
+        Choose how to display dates in the slider:{" "}
       </label>
       <select
         value={value}

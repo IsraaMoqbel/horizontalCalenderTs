@@ -16,3 +16,7 @@
   font-family: "Hind Vadodara", sans-serif;
   text-align: center;
 }
+
+.title {
+  color: var(--dark-blue);
+}

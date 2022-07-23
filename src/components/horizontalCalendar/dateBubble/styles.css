@@ -1,8 +1,11 @@
 .date-value {
   width: 15%;
   margin: auto;
-  margin-top: 50px;
+  margin-top: 55px;
   position: absolute;
   text-align: center;
   font-size: 0.9rem;
+  border-radius: 10px;
+  background-color: rgba(194, 194, 194, 0.4);
+  z-index: 3;
 }
