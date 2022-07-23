@@ -1,20 +1,30 @@
-import { useState, ChangeEvent } from "react";
+import { useState, useEffect, ChangeEvent } from "react";
 import moment from "moment";
 import DateBubble from "./dateBubble";
-import { maxSliderValue, minSliderValue } from "../../constants";
+// import { maxSliderValue, minSliderValue } from "../../constants";
 import { formatDate } from "../../utils/momentHelper";
 import "./styles.css";
 
 export default function HorizontalCalender() {
-  const [date, setDate] = useState(minSliderValue + 3);
-  let minValue = minSliderValue;
-  let maxValue = maxSliderValue;
+  const [date, setDate] = useState(moment().weekday());
+  const [minValue, setMinValue] = useState(date - 4);
+  const [maxValue, setMaxValue] = useState(date + 4);
 
+  useEffect(() => {
+    if (minValue.toString() === date.toString()) {
+      setMinValue(minValue - 2);
+      setMaxValue(maxValue - 2);
+    } else if (maxValue.toString() === date.toString()) {
+      setMinValue(minValue + 2);
+      setMaxValue(maxValue + 2);
+    }
+    console.log(minValue, maxValue);
+  }, [date, minValue, maxValue]);
   return (
     <div className="container">
       <p className="prompt">Choose a date, please:</p>
       <div className="slider-container">
-        <DateBubble date={date} />
+        <DateBubble date={date} minValue={minValue} maxValue={maxValue} />
         <input
           type="range"
           className="slider"

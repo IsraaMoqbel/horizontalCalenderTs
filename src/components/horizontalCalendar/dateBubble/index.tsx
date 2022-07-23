@@ -9,9 +9,7 @@ import { formatDate } from "../../../utils/momentHelper";
 import { IDateBubble } from "../../../interfaces/IDateBubble";
 import "./styles.css";
 
-export default function DateBubble({ date }: IDateBubble) {
-  let minValue = minSliderValue;
-  let maxValue = maxSliderValue;
+export default function DateBubble({ date, minValue, maxValue }: IDateBubble) {
   let newPosition =
     ((date - minSliderValue) / (maxSliderValue - minSliderValue)) * 100;
 
