@@ -19,7 +19,6 @@ export default function HorizontalCalender() {
       setMinValue(minValue + 2);
       setMaxValue(maxValue + 2);
     }
-    console.log(minValue, maxValue, maxValue - minValue);
   }, [date, minValue, maxValue]);
   return (
     <div className="container">
