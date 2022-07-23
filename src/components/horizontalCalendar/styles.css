@@ -1,6 +1,6 @@
 .container {
   position: relative;
-  width: 80%;
+  width: 70%;
   max-width: 1000px;
   margin: auto;
   text-align: left;
@@ -20,7 +20,9 @@
   opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
   -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
   transition: opacity 0.2s;
-  border-radius: 25px;
+  border-radius: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .slider:hover {
@@ -31,17 +33,17 @@
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none; /* Override default look */
   appearance: none;
-  width: 25px; /* Set a specific slider handle width */
+  width: 25px;
   height: 25px; /* Slider handle height */
-  background: var(--blue); /* Green background */
+  background: var(--blue);
   cursor: pointer; /* Cursor on hover */
-  border-radius: 50%;
+  border-radius: 10px;
 }
 
 .slider::-moz-range-thumb {
-  width: 25px; /* Set a specific slider handle width */
+  width: 25px;
   height: 25px; /* Slider handle height */
-  background: var(--blue); /* Green background */
+  background: var(--blue);
   cursor: pointer; /* Cursor on hover */
 }
 

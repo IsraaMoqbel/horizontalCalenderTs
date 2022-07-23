@@ -1,7 +1,7 @@
 import { useState, useEffect, ChangeEvent } from "react";
 import moment from "moment";
 import DateBubble from "./dateBubble";
-// import { maxSliderValue, minSliderValue } from "../../constants";
+import CustumDayDisplayInput from "../custumDayDisplayInput";
 import { formatDate } from "../../utils/momentHelper";
 import "./styles.css";
 
@@ -9,6 +9,7 @@ export default function HorizontalCalender() {
   const [date, setDate] = useState(moment().weekday());
   const [minValue, setMinValue] = useState(date - 4);
   const [maxValue, setMaxValue] = useState(date + 4);
+  const [dayDisplayFormat, setDayDisplayFormat] = useState("LLL");
 
   useEffect(() => {
     if (minValue.toString() === date.toString()) {
@@ -18,25 +19,37 @@ export default function HorizontalCalender() {
       setMinValue(minValue + 2);
       setMaxValue(maxValue + 2);
     }
-    console.log(minValue, maxValue);
+    console.log(minValue, maxValue, maxValue - minValue);
   }, [date, minValue, maxValue]);
   return (
     <div className="container">
-      <p className="prompt">Choose a date, please:</p>
+      <CustumDayDisplayInput
+        value={dayDisplayFormat}
+        onChange={setDayDisplayFormat}
+      />
       <div className="slider-container">
-        <DateBubble date={date} minValue={minValue} maxValue={maxValue} />
+        <DateBubble
+          date={date}
+          minValue={minValue}
+          maxValue={maxValue}
+          dayDisplayFormat={dayDisplayFormat}
+        />
+        <label className="prompt" htmlFor="date-slider">
+          Choose a date through moving the slider, please:
+        </label>
         <input
           type="range"
           className="slider"
+          id="date-slider"
           min={minValue}
           max={maxValue}
           value={date}
           onChange={(e: ChangeEvent<any>) => setDate(e.target.value)}
         />
       </div>
-      <br />
       <p>
-        You have chosen: <b>{formatDate(moment().weekday(date).toString())}</b>
+        You have selected the date:{" "}
+        <b>{formatDate(moment().weekday(date).toString(), dayDisplayFormat)}</b>
       </p>
     </div>
   );

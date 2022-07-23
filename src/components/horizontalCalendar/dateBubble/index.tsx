@@ -1,17 +1,16 @@
 import moment from "moment";
-import {
-  basicBlue,
-  darkBlue,
-  maxSliderValue,
-  minSliderValue
-} from "../../../constants";
+import { basicBlue, darkBlue } from "../../../constants";
 import { formatDate } from "../../../utils/momentHelper";
 import { IDateBubble } from "../../../interfaces/IDateBubble";
 import "./styles.css";
 
-export default function DateBubble({ date, minValue, maxValue }: IDateBubble) {
-  let newPosition =
-    ((date - minSliderValue) / (maxSliderValue - minSliderValue)) * 100;
+export default function DateBubble({
+  date,
+  minValue,
+  maxValue,
+  dayDisplayFormat
+}: IDateBubble) {
+  let newPosition = ((date - minValue) / (maxValue - minValue)) * 100;
 
   return (
     <div
@@ -41,7 +40,7 @@ export default function DateBubble({ date, minValue, maxValue }: IDateBubble) {
             : "normal"
       }}
     >
-      {formatDate(moment().day(date).toString())}
+      {formatDate(moment().day(date).toString(), dayDisplayFormat)}
     </div>
   );
 }

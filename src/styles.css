@@ -1,12 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind+Vadodara&display=swap");
 :root {
   --blue: #0970ce;
   --dark-blue: #01407a;
   --light-blue: #8bc7ff;
 
   --light-grey: #e6e6e6;
+
+  --baseFg: dimgray;
+  --baseBg: white;
+  --accentFg: #006fc2;
+  --accentBg: #bae1ff;
 }
 
 .app {
-  font-family: sans-serif;
+  font-family: "Hind Vadodara", sans-serif;
   text-align: center;
 }

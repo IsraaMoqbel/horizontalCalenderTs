@@ -1,20 +1,20 @@
 import moment from "moment";
 
-export const formatDate = (date: string, locale: string = "en") => {
+export const formatDate = (
+  date: string,
+  format: string,
+  locale: string = "en"
+) => {
   moment.locale(locale);
-  return moment(date).format("dddd, MMMM Do YYYY");
-};
-
-export const getWeekDays = () => {
-  const startOfWeek = moment().startOf("week");
-  const endOfWeek = moment().endOf("week");
-  const days = [];
-  let day = startOfWeek;
-
-  while (day <= endOfWeek) {
-    days.push(day.toDate());
-    day = day.clone().add(1, "d");
-  }
-
-  return days;
+  moment.updateLocale(locale, {
+    longDateFormat: {
+      LT: "h:mm A",
+      LTS: "h:mm:ss A",
+      L: "MM/DD/YYYY",
+      LL: "MMM Do YYYY",
+      LLL: "ddd, MMMM Do YYYY",
+      LLLL: "dddd, MMMM Do YYYY"
+    }
+  });
+  return moment(date).format(format);
 };
