@@ -12,8 +12,12 @@
   --accentBg: #bae1ff;
 }
 
-.app {
+* {
   font-family: "Hind Vadodara", sans-serif;
+  box-sizing: border-box;
+}
+
+.app {
   text-align: center;
 }
 

@@ -8,4 +8,6 @@
   border-radius: 10px;
   background-color: rgba(194, 194, 194, 0.4);
   z-index: 3;
+  line-height: 0.9;
+  padding: 5px;
 }
